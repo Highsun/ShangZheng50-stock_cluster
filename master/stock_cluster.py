@@ -9,6 +9,9 @@ from std_setup import plot_setup, load_data
 plot_setup()
 data_open, data_close, data_max, data_min, data_num, mapping_dict = load_data()
 
+if not os.path.exists('./results/cluster'):
+    os.makedirs('./results/cluster')
+
 # 0. Load DTW results
 data_dtw1 = pd.read_csv('./results/DTW/DTW_raw.csv', index_col=0)
 data_dtw2 = pd.read_csv('./results/DTW/DTW_obv.csv', index_col=0)
@@ -55,6 +58,8 @@ stock_names = [mapping_dict[stock_code] for stock_code in stock_codes]
 clustered_stocks = pd.DataFrame({'Stock': stock_names, 'Cluster': clusters})
 
 print(clustered_stocks)
+clustered_stocks_pivot = clustered_stocks.pivot(columns='Cluster', values='Stock')
+clustered_stocks_pivot.to_csv(f'./results/cluster/clustered_results(k={n_clusters}).csv', index=False)
 
 # Visualize clustering results
 def plot_cluster(n_clusters, clustered_stocks):
@@ -83,9 +88,6 @@ def plot_elbow_method(similarity_matrix, max_k=10):
     plt.title('The Elbow Method showing the optimal k')
     # plt.show()
     plt.savefig(f'./results/cluster/elbow_method(k={n_clusters}).png', dpi=300)
-
-if not os.path.exists('./results/cluster'):
-    os.makedirs('./results/cluster')
 
 plot_cluster(n_clusters, clustered_stocks)
 plot_elbow_method(similarity_matrix)
