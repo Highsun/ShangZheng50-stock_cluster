@@ -12,6 +12,7 @@ This is the final version of our project, fully structured and tested. You can u
   - mplfinance: 0.12.10b0
 
 ## Structure
+```
 .
 └── master
     ├── DTW.py
@@ -42,6 +43,7 @@ This is the final version of our project, fully structured and tested. You can u
     ├── reward_ratio_hot.py
     ├── std_setup.py
     └── stock_cluster.py
+```
 
 13 directories, 17 files
 
@@ -77,9 +79,7 @@ Realize the DTW algorithm, and apply it to measure the similarity between raw da
 
 ### 'stock_cluster.py'
 Use K-means algorithm to cluster stocks, loss function:
-$$
-\mathcal{L}_all = w_1 \times \mathcal{L}_{RAW} + w_2 \times \mathcal{L}_{RSI} + w_3 \times \mathcal{L}_{OBV} + w_4 \times \mathcal{L}_{RR}
-$$
+$$\mathcal{L}_all = w_1 \times \mathcal{L}_{RAW} + w_2 \times \mathcal{L}_{RSI} + w_3 \times \mathcal{L}_{OBV} + w_4 \times \mathcal{L}_{RR}$$
 Where $ RR $ denotes "Return Rate", $ w_i $ is the weight of each loss, initially defined as 0.2, 0.3, 0.25, 0.25.
 
 ### 'cluster_plot.py'
@@ -99,4 +99,5 @@ All the results (plots and output files) are stored in this folder.
 ---
 
 Created by Highsun, any question: highsun910@gmail.com
+
 **Last update**: 2024.11.21
