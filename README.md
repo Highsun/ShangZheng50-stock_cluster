@@ -79,8 +79,14 @@ Realize the DTW algorithm, and apply it to measure the similarity between raw da
 
 ### 'stock_cluster.py'
 Use K-means algorithm to cluster stocks, loss function:
-$$\mathcal{L}_all = w_1 \times \mathcal{L}_{RAW} + w_2 \times \mathcal{L}_{RSI} + w_3 \times \mathcal{L}_{OBV} + w_4 \times \mathcal{L}_{RR}$$
-Where $ RR $ denotes "Return Rate", $ w_i $ is the weight of each loss, initially defined as 0.2, 0.3, 0.25, 0.25.
+
+$$
+\mathcal{L}_{\text{all}} = w_1 \times \mathcal{L}_{\text{RAW}} + w_2 \times \mathcal{L}_{\text{RSI}} + w_3 \times \mathcal{L}_{\text{OBV}} + w_4 \times \mathcal{L}_{\text{RR}}
+$$
+
+Where:
+- $RR$: Return Rate.
+- $w_i$: Weight of each loss term, initially defined as $w_1 = 0.2$, $w_2 = 0.3$, $w_3 = 0.25$, $w_4 = 0.25$.
 
 ### 'cluster_plot.py'
 Draw the results of K-means clustering.
