@@ -31,9 +31,9 @@ if not os.path.exists('./results/reward_ratio/returns'):
 
 data_returns = np.zeros((len(data_close.index), len(data_close.columns) - 1))
 for stock_code in data_close.index:
-    # plot_returns(returns, stock_code)
-    # plt.savefig(f'./results/reward_ratio/returns/returns_{stock_code}.png', dpi=300)
-    # plt.close()
+    plot_returns(returns, stock_code)
+    plt.savefig(f'./results/reward_ratio/returns/returns_{stock_code}.png', dpi=300)
+    plt.close()
     data_returns[data_close.index.get_loc(stock_code)] = returns[stock_code]
 
 data_returns = pd.DataFrame(data_returns, index=data_close.index, columns=data_close.columns[1:])

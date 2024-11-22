@@ -7,10 +7,10 @@ plot_setup()
 data_open, data_close, data_max, data_min, data_num, mapping_dict = load_data()
 
 def calculate_reward_matrix(data_open, data_close):
-    A = np.zeros((50, 50))
-    for k in range(49):
+    A = np.zeros((49, 49))
+    for k in range(48):
         p1 = (data_open.iloc[k, :] / data_close.iloc[k, :] - 1).values
-        for t in range(k+1, 50):
+        for t in range(k+1, 49):
             p2 = (data_open.iloc[t, :] / data_close.iloc[t, :] - 1).values
             Q1 = np.where(p2 * p1 > 0, 1, 0)
             Q2 = np.where(np.abs(p2 - p1) < 0.001, 0.95,
@@ -21,7 +21,7 @@ def calculate_reward_matrix(data_open, data_close):
     return A
 
 A = calculate_reward_matrix(data_open, data_close)
-A = A + A.T + np.eye(50)
+A = A + A.T + np.eye(49)
 
 plt.imshow(A, cmap='jet', interpolation='nearest')
 plt.colorbar()

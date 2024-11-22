@@ -54,7 +54,7 @@ if not os.path.exists('./results/RSI'):
 period = 14
 data_rsi = np.zeros((len(data_close.index), len(data_close.columns) - period))
 for stock_code in data_close.index:
-    # plot_rsi_curve(stock_code)
+    plot_rsi_curve(stock_code)
     rsi = calculate_rsi(data_close, stock_code, period)
     data_rsi[data_close.index.get_loc(stock_code)] = rsi
 

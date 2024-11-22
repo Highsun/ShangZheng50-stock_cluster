@@ -4,7 +4,7 @@ from std_setup import *
 plot_setup()
 data_open, data_close, data_max, data_min, data_num, mapping_dict = load_data()
 
-n_clusters = 3
+n_clusters = 2
 clusters = pd.read_csv(f'./results/cluster/clustered_stocks(k={n_clusters}).csv')
 
 # Plot by clusters

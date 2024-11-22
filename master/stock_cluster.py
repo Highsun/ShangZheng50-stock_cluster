@@ -50,14 +50,23 @@ def cluster_stocks(similarity_matrix, n_clusters=5):
     clusters = kmeans.fit_predict(1 - similarity_matrix)
     return clusters
 
-n_clusters = 3
+n_clusters = 2
 clusters = cluster_stocks(similarity_matrix, n_clusters)
 
 stock_codes = list(mapping_dict.keys())
+stock_codes.remove('sh.600519') # Drop Guizhou Maotai if you need
 stock_names = [mapping_dict[stock_code] for stock_code in stock_codes]
 clustered_stocks = pd.DataFrame({'Stock': stock_names, 'Cluster': clusters})
 
-print(clustered_stocks)
+# Save clustering results
+clustered_list = []
+for i in range(n_clusters):
+    cluster_stocks = clustered_stocks[clustered_stocks['Cluster'] == i]['Stock'].values
+    cluster_codes = [list(mapping_dict.keys())[list(mapping_dict.values()).index(stock)] for stock in cluster_stocks]
+    clustered_list.append(cluster_codes)
+clustered_list = pd.DataFrame(clustered_list).T
+clustered_list.to_csv(f'./results/cluster/clustered_stocks(k={n_clusters}).csv', index=False)
+
 clustered_stocks_pivot = clustered_stocks.pivot(columns='Cluster', values='Stock')
 clustered_stocks_pivot.to_csv(f'./results/cluster/clustered_results(k={n_clusters}).csv', index=False)
 

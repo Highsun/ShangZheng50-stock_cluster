@@ -39,9 +39,9 @@ if not os.path.exists('./results/OBV'):
 
 data_obv = np.zeros((len(data_close.index), len(data_close.columns)))
 for stock_code in data_close.index:
-    # plot_obv(stock_code)
-    # plt.savefig(f'./results/OBV/OBV_{stock_code}.png', dpi=300)
-    # plt.close()
+    plot_obv(stock_code)
+    plt.savefig(f'./results/OBV/OBV_{stock_code}.png', dpi=300)
+    plt.close()
     obv = calculate_obv(data_close, data_num, stock_code)
     data_obv[data_close.index.get_loc(stock_code)] = obv
 

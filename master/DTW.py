@@ -25,7 +25,7 @@ def make_dtw_matrix(data_close, calculate_dtw):
     return dtw
 
 ## data source:
-# dtw = make_dtw_matrix(data_close, calculate_dtw)
+dtw = make_dtw_matrix(data_close, calculate_dtw)
 
 # data_obv = pd.read_csv('./results/OBV/OBV_raw.csv', index_col=0)
 # dtw = make_dtw_matrix(data_obv, calculate_dtw)
@@ -33,12 +33,12 @@ def make_dtw_matrix(data_close, calculate_dtw):
 # data_rsi = pd.read_csv('./results/RSI/RSI_raw.csv', index_col=0)
 # dtw = make_dtw_matrix(data_rsi, calculate_dtw)
 
-data_returns = pd.read_csv('./results/reward_ratio/returns/returns_raw.csv', index_col=0)
-dtw = make_dtw_matrix(data_returns, calculate_dtw)
+# data_returns = pd.read_csv('./results/reward_ratio/returns/returns_raw.csv', index_col=0)
+# dtw = make_dtw_matrix(data_returns, calculate_dtw)
 
 # print(dtw)
 if not os.path.exists('./results/DTW'):
     os.mkdir('./results/DTW')
 
 dtw = pd.DataFrame(dtw, index=data_close.index, columns=data_close.index)
-dtw.to_csv('./results/DTW/DTW_returns.csv')
+dtw.to_csv('./results/DTW/DTW_raw.csv')

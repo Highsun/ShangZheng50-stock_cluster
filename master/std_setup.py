@@ -9,6 +9,7 @@ def plot_setup():
 def load_data(data_path='./dataset/cleaned_data.csv', mapping_path='./dataset/mapping_dict.json'):
     # Load data with mapping
     data = pd.read_csv(data_path, index_col='code', encoding='utf-8')
+    data = data.drop(index='sh.600519') # Drop Guizhou Maotai if you need
 
     # Load mapping dictionary
     with open(mapping_path, 'r', encoding='utf-8') as f:
@@ -22,3 +23,5 @@ def load_data(data_path='./dataset/cleaned_data.csv', mapping_path='./dataset/ma
     data_num = data.iloc[4::5]
 
     return data_open, data_close, data_max, data_min, data_num, mapping_dict
+
+_, _, _, _, _, mapping_dict = load_data()
