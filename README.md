@@ -14,15 +14,16 @@ This is the final version of our project, fully structured and tested. You can u
 ## Structure
 ```
 .
+├── README.md
 └── master
     ├── DTW.py
     ├── K_line.py
     ├── OBV.py
-    ├── Pearson.py
     ├── RSI.py
     ├── __pycache__
     │   └── std_setup.cpython-312.pyc
     ├── basic_display.py
+    ├── best_weight_clustering.py
     ├── clean_data.py
     ├── cluster_plot.py
     ├── dataset
@@ -30,7 +31,8 @@ This is the final version of our project, fully structured and tested. You can u
     │   ├── mapping_dict.json
     │   └── 上证50成分股交易数据.csv
     ├── extras
-    │   └── entropy_weight.py
+    │   ├── clustering.py
+    │   └── silhouette.py
     ├── results
     │   ├── DTW
     │   ├── K_line
@@ -41,11 +43,11 @@ This is the final version of our project, fully structured and tested. You can u
     │   └── reward_ratio
     ├── reward_ratio_curve.py
     ├── reward_ratio_hot.py
-    ├── std_setup.py
-    └── stock_cluster.py
-```
+    └── std_setup.py
 
-13 directories, 17 files
+13 directories, 18 files
+
+```
 
 ## Files
 > Note: These files are listed in order.
@@ -77,8 +79,15 @@ Draw the heat-map of the stock return rate, aiming at better display the return 
 ### 'DTW.py'
 Realize the DTW algorithm, and apply it to measure the similarity between raw data, RSI, OBV and return rate curve.
 
-### 'stock_cluster.py'
-Use K-means algorithm to cluster stocks, loss function:
+### 'best_weight_clustering.py'
+Use the grid point method to search for the optimal weight distribution of each DTW matrix under the condition of applying the contour coefficient evaluation results.
+
+You can also apply your own weight allocation method with these two individual clustering programs.
+
+> Notes: Before using, copy these two under the `\extras` folder to the `\master` directory.
+
+#### 'clustering.py'
+Use hierarchical clustering algorithm to cluster stocks, distance:
 
 $$
 \mathcal{L}_{\text{all}} = w_1 \times \mathcal{L}_{\text{RAW}} + w_2 \times \mathcal{L}_{\text{RSI}} + w_3 \times \mathcal{L}_{\text{OBV}} + w_4 \times \mathcal{L}_{\text{RR}}
@@ -86,13 +95,13 @@ $$
 
 Where:
 - $RR$: Return Rate.
-- $w_i$: Weight of each loss term, initially defined as $w_1 = 0.2$, $w_2 = 0.3$, $w_3 = 0.25$, $w_4 = 0.25$.
+- $w_i$: Weight of each distance term, initially defined as $w_1 = 0.2$, $w_2 = 0.3$, $w_3 = 0.25$, $w_4 = 0.25$.
+
+#### 'silhouette.py''
+Use the contour coefficient method to evaluate the quality of clustering results.
 
 ### 'cluster_plot.py'
-Draw the results of K-means clustering.
-
-### 'Pearson.py''
-Apply Pearson correlation coefficient to measure the quality of the clustering results.
+Draw the results of clustering.
 
 ## Folders
 ### dataset
@@ -104,6 +113,6 @@ All the results (plots and output files) are stored in this folder.
 
 ---
 
-Created by Highsun, any question: highsun910@gmail.com
+Created and edited by Highsun, any question: highsun910@gmail.com
 
-**Last update**: 2024.11.21
+**Last update**: 2024.11.26
