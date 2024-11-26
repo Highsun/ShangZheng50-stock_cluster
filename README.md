@@ -91,9 +91,7 @@ You can also apply your own weight allocation method with these two individual c
 #### 'clustering.py'
 Use hierarchical clustering algorithm to cluster stocks, distance:
 
-$$
-\mathcal{L}_{\text{all}} = w_1 \times \mathcal{L}_{\text{RAW}} + w_2 \times \mathcal{L}_{\text{RSI}} + w_3 \times \mathcal{L}_{\text{OBV}} + w_4 \times \mathcal{L}_{\text{RR}}
-$$
+$$ L_{\text{all}} = w_1 \times L_{\text{RAW}} + w_2 \times L_{\text{RSI}} + w_3 \times L_{\text{OBV}} + w_4 \times L_{\text{RR}} $$
 
 Where:
 - $RR$: Return Rate.
