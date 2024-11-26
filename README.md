@@ -23,6 +23,13 @@ Fixed a serious error in the algorithm: Kmeans clustering is not applicable to t
 
 All results have been rerun and uploaded to the master branch.
 
+### 2024.11.26
+**master** version: 2.1.0
+
+We did a lot of experiments on the results of the grid point method, and finally got 6 groups of effective parameter settings and shared them with you.
+
 ---
+
+Thanks to all the participants, including Maxcence, for their contributions to this project.
 
 Any questions or intention to cooperate, please contact me by email: highsun910@gmail.com
