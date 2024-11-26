@@ -11,6 +11,12 @@ Pearson test method has been added to the project.
 
 A detailded instruction has been added to the master branch through README.md.
 
+### 2024.11.26
+**master** version: 2.0.0
+
+Fixed a serious error in the algorithm: Kmeans clustering is not applicable to the similarity of DTW metrics. It should be a clustering method that directly accepts distance matrices such as hierarchical clustering as input.
+
+All the results are modified and reloaded to the master branch.
 ---
 
 Any questions or intention to cooperate, please contact me by email: highsun910@gmail.com
