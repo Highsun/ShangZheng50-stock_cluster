@@ -8,8 +8,10 @@ This is the final version of our project, fully structured and tested. You can u
   - numpy: 1.26.4
   - json5: 0.9.25
   - matplotlib: 3.9.2
+  - scipy: 1.13.1
   - scikit-learn: 1.5.1
   - mplfinance: 0.12.10b0
+  - fastdtw: 0.3.4
 
 ## Structure
 ```
