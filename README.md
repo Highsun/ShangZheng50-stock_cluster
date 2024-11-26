@@ -30,6 +30,6 @@ We did a lot of experiments on the results of the grid point method, and finally
 
 ---
 
-Thanks to all the participants, including Maxcence, for their contributions to this project.
+Thanks to all the participants, including Maxence, for their contributions to this project.
 
 Any questions or intention to cooperate, please contact me by email: highsun910@gmail.com
