@@ -78,7 +78,7 @@ Draw the heat-map of the stock return rate, aiming at better display the return 
 Realize the DTW algorithm, and apply it to measure the similarity between raw data, RSI, OBV and return rate curve.
 
 ### 'stock_cluster.py'
-Use K-means algorithm to cluster stocks, loss function:
+Use hierarchical clustering algorithm to cluster stocks, distance:
 
 $$
 \mathcal{L}_{\text{all}} = w_1 \times \mathcal{L}_{\text{RAW}} + w_2 \times \mathcal{L}_{\text{RSI}} + w_3 \times \mathcal{L}_{\text{OBV}} + w_4 \times \mathcal{L}_{\text{RR}}
@@ -86,10 +86,10 @@ $$
 
 Where:
 - $RR$: Return Rate.
-- $w_i$: Weight of each loss term, initially defined as $w_1 = 0.2$, $w_2 = 0.3$, $w_3 = 0.25$, $w_4 = 0.25$.
+- $w_i$: Weight of each distance term, initially defined as $w_1 = 0.2$, $w_2 = 0.3$, $w_3 = 0.25$, $w_4 = 0.25$.
 
 ### 'cluster_plot.py'
-Draw the results of K-means clustering.
+Draw the results of clustering.
 
 ### 'Pearson.py''
 Apply Pearson correlation coefficient to measure the quality of the clustering results.
@@ -104,6 +104,6 @@ All the results (plots and output files) are stored in this folder.
 
 ---
 
-Created by Highsun, any question: highsun910@gmail.com
+Created and edited by Highsun, any question: highsun910@gmail.com
 
-**Last update**: 2024.11.21
+**Last update**: 2024.11.26
