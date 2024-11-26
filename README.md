@@ -84,6 +84,18 @@ Realize the DTW algorithm, and apply it to measure the similarity between raw da
 ### 'best_weight_clustering.py'
 Use the grid point method to search for the optimal weight distribution of each DTW matrix under the condition of applying the contour coefficient evaluation results.
 
+After our experiment, the recommended weight allocation and distance thresholds are as follows:
+
++ Weights
+  + (0.5, 0.2, 0.2, 0.1)
+  + (0.5, 0.1, 0.3, 0.1)
++ Distance-threshold
+  + 8
+  + 10
+  + 12
+
+The above $ 2 \times 3 = 6 $ combinations can show a good classification effect.
+
 You can also apply your own weight allocation method with these two individual clustering programs.
 
 > Notes: Before using, copy these two under the `\extras` folder to the `\master` directory.

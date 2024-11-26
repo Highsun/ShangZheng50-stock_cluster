@@ -33,8 +33,8 @@ def evaluate_clustering(dtw_matrix, clusters):
     return silhouette_score(dtw_matrix, clusters, metric='precomputed')
 
 # Initialize
-weights = np.arange(0.0, 1.05, 0.05).tolist()
-distance_threshold = 10
+weights = np.arange(0.05, 0.8, 0.02).tolist() # Hyperparameter
+distance_threshold = 12 # Hyperparameter
 best_score = -1
 best_weights = None
 best_clusters = None
