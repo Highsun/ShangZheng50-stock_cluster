@@ -1,4 +1,4 @@
-# MASTER branch of ShangZhen50-stock_cluster
+# MASTER branch of ShangZheng50-stock_cluster
 
 This is the final version of our project, fully structured and tested. You can use our project with the guidance below.
 
