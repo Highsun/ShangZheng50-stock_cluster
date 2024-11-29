@@ -96,7 +96,7 @@ After our experiment, the recommended weight allocation and distance thresholds 
 
 The above $ 2 \times 3 = 6 $ combinations can show a good classification effect.
 
-You can also apply your own weight allocation method with these two individual clustering programs.
+You can also apply your own weight allocation method with these two individual clustering programs. We also provide the experimental results under the recommended parameter settings under the `\extras` folder.
 
 > Notes: Before using, copy these two under the `\extras` folder to the `\master` directory.
 
