@@ -1,6 +1,8 @@
 # MASTER branch of ShangZheng50-stock_cluster
 
-This is the final version of our project, fully structured and tested. You can use our project with the guidance below.
+**Version**: 2.1.0
+
+This is the latest version of our project, fully structured and tested. You can use our project with the guidance below.
 
 ## Environment
 - Python: Latest version of python (python 3.12.2 or later version)
