@@ -1,7 +1,7 @@
 # ShangZheng50-stock_cluster
 A group assignment for multivariate statistical analysis.
 
-The latest version v2.1.0 is uploaded in master branch, which contains a complete workable projects, realize the classification of multi-dimensional data stocks. For detailed instructions, please refer to the `README.md` document under the master branch.
+The latest version v2.1.1 is uploaded in master branch, which contains a complete workable projects, realize the classification of multi-dimensional data stocks. For detailed instructions, please refer to the `README.md` document under the master branch.
 
 ## Changelog
 ### 2024.11.20
@@ -27,6 +27,11 @@ All results have been rerun and uploaded to the master branch.
 **master** version: 2.1.0
 
 We did a lot of experiments on the results of the grid point method, and finally got 6 groups of effective parameter settings and shared them with you.
+
+### 2024.11.29
+**master** version: 2.1.1
+
+Add the experimental results under the recommended parameters to the master branch
 
 ---
 
